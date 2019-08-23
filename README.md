@@ -1,17 +1,17 @@
 Role Name
 =========
 
-nstall fzf package
+nstalls fzf package
 
 Requirements
 ------------
 
-git must be installed and executable prior to use fzf role
+git must be installed prior to use fzf role
 
 Role Variables
 --------------
 
-fzf_install_path - defines fzf installation path (git will clone fzf there
+fzf_install_path - defines fzf installation path (git will clone fzf there_
 fzf_userlist     - the list of users fzf shall be installed for
 
 default:
@@ -26,10 +26,22 @@ Dependencies
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+how to use your role
+    
+1) define fzf_installation_path and fzf_user_list i.e. in ./group_vars/all/fzf.yml 
+    fzf_userlist:
+     - ubuntu
+     - user
+    fzf_install_path:  "/usr/local/fzf"
+
+2) add the role to the playbook 
 
     - hosts: servers
-      roles: fzf
+      roles: 
+        - role: taktus.fzf
+          tags:
+            - fzf
+
 
 License
 -------
