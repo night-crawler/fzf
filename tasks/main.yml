@@ -15,6 +15,10 @@
   shell: "{{ fzf_install_path }}/install --bin"
   when: not fzf_installed.stat.exists
 
+- name: Determine existing users
+  getent:
+     database: passwd
+
 - name: 'fzf: config for users'
   template:
     dest: "~{{ item }}/.fzf.bash"
@@ -22,6 +26,7 @@
     owner: "{{ item }}"
     group: "{{ item }}"
   with_items: "{{ fzf_userlist }}"
+  when: item in ansible_facts.getent_passwd
 
 - name: 'fzf: config for users'
   blockinfile:
@@ -29,4 +34,5 @@
     block: |
       [ -f ~/.fzf.bash ] && source ~/.fzf.bash
   with_items: "{{ fzf_userlist }}"
+  when: item in ansible_facts.getent_passwd
 
