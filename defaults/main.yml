@@ -1,0 +1,5 @@
+---
+# defaults file for fzf
+#
+fzf_install_path: "/usr/local/fzf"
+fzf_userlist: 
