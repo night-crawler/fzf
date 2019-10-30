@@ -2,19 +2,19 @@ galaxy_info:
   author: WRAS + MARQ
   description: install fzf tool globally and add it to bash for listed users
   company: Lan Projekt
-  license: license (GPLv2, CC-BY, etc)
+  license: GPLv2
   min_ansible_version: 2.2
   platforms:
     - name: Ubuntu
       versions: all
     - name: Debian
       versions: all
-  galaxy_tags: 
+  galaxy_tags:
    - ubuntu
    - debian
    - fzf
    - install
    - linux
    - cli
-   - tools  
+   - tools
   dependencies: []

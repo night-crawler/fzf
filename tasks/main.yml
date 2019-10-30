@@ -1,7 +1,7 @@
 ---
 # tasks file for host_packages
 
-- name: 'check if fzf is installed' 
+- name: 'check if fzf is installed'
   stat: path={{ fzf_install_path }}
   register: fzf_installed
 
@@ -9,6 +9,7 @@
   git:
     repo: https://github.com/junegunn/fzf.git
     dest: "{{ fzf_install_path }}"
+    remote: origin
   when: not fzf_installed.stat.exists
 
 - name: 'fzf: install packages'
