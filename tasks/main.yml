@@ -13,7 +13,7 @@
   when: not fzf_installed.stat.exists
 
 - name: 'fzf: install packages'
-  shell: "{{ fzf_install_path }}/install --bin"
+  command: "{{ fzf_install_path }}/install --bin"
   when: not fzf_installed.stat.exists
 
 - name: Determine existing users

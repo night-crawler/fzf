@@ -1,7 +1,7 @@
 Role Name
 =========
 
-nstalls fzf package
+installs fzf package
 
 Requirements
 ------------
